@@ -20,9 +20,9 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 class FirstScr(Screen):
     def __init__(self, name='first'):
         super().__init__(name=name)
-        btn = Button(text='Hello World', size_hint=(None, None), size=(200, 100))
-        btn.bind(on_press=self.next)
+        btn = Button(text='Hello World')
         self.add_widget(btn)
+        btn.on_press = self.next
 
     def next(self):
         self.manager.transition.direction = 'left'
@@ -31,8 +31,8 @@ class FirstScr(Screen):
 class SecondScr(Screen):
     def __init__(self, name='second'):
         super().__init__(name=name)
-        btn = Button(text='Hello World', size_hint=(None, None), size=(200, 100))
-        btn.bind(on_press=self.next)
+        btn = Button(text='Hello World')
+        btn.on_press = self.next
         self.add_widget(btn)
 
     def next(self):
